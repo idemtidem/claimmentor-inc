@@ -1,0 +1,10 @@
+Date,Feature,Requested By,Source,Priority,Status,Blocking Deal,Multiple Customers,Notes
+2026-02-26,Outlook Calendar Integration,Farm Bureau (Brett Sirmex),Demo meeting,HIGH,Open,Yes,No,Adjusters live in Outlook - need seamless integration
+2026-02-26,Spanish Language Transcription,Farm Bureau (Steve Love),Demo meeting,HIGH,Open,Yes,No,Large number of Spanish-speaking workers in WC claims
+2026-02-26,SOC 2 Compliance Documentation,Farm Bureau (Steve Love),Demo meeting,BLOCKER,Open,Yes,Yes,Required for enterprise procurement - standard requirement
+2026-02-26,Enhanced Meeting Reminders,Farm Bureau (Steve Love),Demo meeting,HIGH,Open,Yes,Yes,Day before + hours before via SMS/email for field workers
+2026-02-26,Adjuster QA Dashboard,Farm Bureau (Steve Love),Demo meeting,MEDIUM,Open,No,Yes,Supervisors review statements and provide feedback
+2026-02-26,Adjuster Training Mode,Farm Bureau (Steve Love),Demo meeting,MEDIUM,Open,No,No,Use scenarios to train junior adjusters on statement-taking
+2026-02-26,Real-time Coaching,Farm Bureau (Steve Love),Demo meeting,MEDIUM,Open,No,No,Guide adjusters through questions during live statements
+2026-02-26,MP4 File Compatibility,Farm Bureau (Steve Love),Demo meeting,BLOCKER,Open,Yes,No,Need to verify MP4 works with their claims system (they use WMV)
+2026-02-26,Backup/Proxy Adjuster Access,Farm Bureau (Steve Love),Demo meeting,MEDIUM,Open,No,No,Claims don't stop when someone is on vacation
