@@ -22,6 +22,10 @@ This repository is the **central hub for ClaimMentor company management** — no
 ```
 claimmentor-inc/
 ├── CLAUDE.md               # This file — agent instructions
+├── prospects/              # Sales pipeline and prospect tracking
+│   └── [company-name].md   # One file per prospect
+├── customers/              # Active customer profiles
+│   └── [company-name].md   # One file per customer
 ├── roadmap/                # Product roadmap and planning
 │   ├── current-quarter.md
 │   ├── backlog.md
@@ -251,6 +255,132 @@ Quarterly:
 ---
 
 ## Document Standards
+
+### Prospects
+
+```markdown
+# [Company Name]
+
+> [One-line description: industry, size, use case]
+
+## Status
+- **Stage:** [Lead / Qualified / Demo Scheduled / Demo Completed / Proposal / Negotiation / Closed Won / Closed Lost]
+- **Next Step:** [What needs to happen next]
+- **Owner:** [Who owns this relationship]
+
+## Company Profile
+- **Industry:** [e.g., Workers Comp, P&C, Health]
+- **Size:** [Employee count, claims volume, etc.]
+- **Location:** [HQ location]
+- **Current Solution:** [What they use today]
+
+## Contacts
+
+| Name | Title | Email | Phone | Notes |
+|------|-------|-------|-------|-------|
+| | | | | Decision maker / Champion / End user |
+
+## Meeting Log
+
+### YYYY-MM-DD — [Meeting Type]
+
+**Attendees:** [Names]
+**Recording:** [Path to recording if available]
+**Transcript:** [Path to transcript if available]
+
+#### Key Discussion Points
+- [Point 1]
+- [Point 2]
+
+#### Their Pain Points
+- [Pain 1]
+- [Pain 2]
+
+#### What They Liked
+- [Feature/aspect that resonated]
+- [Another positive reaction]
+
+#### What They Didn't Like / Concerns
+- [Objection or concern raised]
+- [Missing feature or gap]
+
+#### Requirements / Requests
+| Requirement | Priority | Notes |
+|-------------|----------|-------|
+| | | |
+
+#### Next Steps
+- [ ] [Action item with owner]
+
+---
+
+## Deal Notes
+
+**Why they'd buy:**
+- [Reason 1]
+- [Reason 2]
+
+**Risks / Objections:**
+- [Risk 1]
+- [Risk 2]
+
+**Estimated Deal Size:**
+- [X] adjusters × $100/month = $[X]/month
+- Annual: $[X]
+
+**Timeline:**
+- [Expected decision date or buying timeline]
+```
+
+### Customers
+
+```markdown
+# [Company Name]
+
+> [One-line description]
+
+## Account Status
+- **Customer Since:** YYYY-MM-DD
+- **Plan:** [Plan name / tier]
+- **MRR:** $[X]
+- **Health:** [Healthy / At Risk / Churned]
+- **Owner:** [Account manager]
+
+## Company Profile
+- **Industry:** [e.g., Workers Comp, P&C, Health]
+- **Size:** [Employee count, claims volume]
+- **Users:** [Number of active users]
+
+## Contacts
+
+| Name | Title | Email | Role |
+|------|-------|-------|------|
+| | | | Champion / Admin / End user |
+
+## Usage & Engagement
+- **Monthly Recordings:** [X]
+- **Last Active:** [Date]
+- **Key Use Cases:** [How they use the product]
+
+## Meeting / Interaction Log
+
+### YYYY-MM-DD — [Meeting Type]
+[Notes]
+
+---
+
+## Expansion Opportunities
+- [Opportunity 1]
+- [Opportunity 2]
+
+## Risk Factors
+- [Risk 1]
+- [Risk 2]
+
+## Feature Requests
+- [Link to feature request 1]
+- [Link to feature request 2]
+```
 
 ### Feature Requests
 
