@@ -31,7 +31,7 @@
 - Generic — could describe Zoom or Calendly
 - Feature-focused, not outcome-focused
 - No mention of VIDEO (your differentiator)
-- No mention of Workers Comp, fraud, litigation
+- No mention of fraud, litigation, SIU
 - Doesn't speak to what customers actually said they'd buy
 
 ---
@@ -58,7 +58,7 @@ From Farm Bureau demo:
 |---|----------|-------------|
 | Recording | Audio | **VIDEO** |
 | Pricing | Hidden | **$100/mo** |
-| Focus | General P&C | **Workers Comp** |
+| Target | Enterprise | **Small/Mid-tier P&C** |
 | Scale | 25M statements | Early stage |
 
 **n2uitive owns "enterprise audio statements."**
@@ -131,22 +131,23 @@ From Farm Bureau demo:
 
 ---
 
-## Slide 8: After — Workers Comp Section
+## Slide 8: After — Use Cases by Line
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
-│            PURPOSE-BUILT FOR WORKERS COMP                   │
+│              BUILT FOR INSURANCE ADJUSTERS                  │
 │                                                             │
-│  ✓ Morphing injury protection — catch stories that change  │
-│  ✓ PTD fraud detection — video ID for SIU surveillance     │
-│  ✓ Spanish transcription — for your entire workforce       │
-│  ✓ Employer evidence — see the injury scene on video       │
+│  WORKERS COMP        AUTO              PROPERTY/LIABILITY   │
+│  ─────────────       ─────────────     ─────────────────    │
+│  Morphing injuries   Injury verify     Damage documentation │
+│  PTD fraud / SIU     Liability claims  Policyholder ID      │
+│  Employer evidence   Accident context  Witness statements   │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-**Why it works:** Farm Bureau is WC. This is your ICP.
+**Why it works:** Serves 700 small/mid-tier P&C insurers across all lines.
 
 ---
 
@@ -187,7 +188,7 @@ From Farm Bureau demo:
 | **Headline** | "Automates scheduling, recording, and summaries" | "Video Recorded Statements for Insurance" |
 | **Subhead** | "Helping adjusters work faster" | "See who you're paying. Catch fraud. Defend litigation." |
 | **Differentiator** | None visible | VIDEO (vs audio competitors) |
-| **Target market** | Generic | Workers Comp |
+| **Target market** | Generic | Small/mid-tier P&C insurers |
 | **Problems addressed** | None specific | Fraud, morphing injuries, litigation |
 | **Pricing** | Not shown | $100/mo (transparent) |
 | **Credibility** | None | "Built by insurance technology veterans" |
@@ -201,9 +202,9 @@ From Farm Bureau demo:
 
 1. **VIDEO** — Say it explicitly. It's your differentiator.
 2. **Fraud / SIU** — "Identify claimants for surveillance"
-3. **Morphing injuries** — "Roll back the tape when stories change"
+3. **Morphing claims** — "Roll back the tape when stories change"
 4. **Litigation** — "Facts on record for stronger defense"
-5. **Workers Comp** — Your ICP
+5. **"Built for Insurance Adjusters"** — Broad P&C positioning
 6. **$100/month** — Transparent, competitive
 7. **"Insurance technology veterans"** — Credibility
 
@@ -233,7 +234,7 @@ Subhead options:
 |--------|--------|--------|
 | Change headline to outcome-focused | 5 min | HIGH |
 | Add "Video" explicitly | 5 min | HIGH |
-| Add "Workers Comp" somewhere | 5 min | MEDIUM |
+| Add "Built for Insurance Adjusters" | 5 min | MEDIUM |
 | Add pricing ($100/mo) | 10 min | HIGH |
 | Add "Built by insurance veterans" | 5 min | MEDIUM |
 
@@ -244,8 +245,8 @@ Subhead options:
 ## Slide 14: Next Steps
 
 1. **Pick a headline** from the options
-2. **Update hero section** (30 min)
-3. **Add WC-specific content** (1 hour)
+2. **Update hero section**
+3. **Add use case sections** (WC, Auto, Property)
 4. **Get a testimonial quote** (from DJ or early user)
 5. **Review in 2 weeks** after Farm Bureau follow-up
 
