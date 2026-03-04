@@ -22,6 +22,16 @@ This repository is the **central hub for ClaimMentor company management** — no
 ```
 claimmentor-inc/
 ├── CLAUDE.md               # This file — agent instructions
+├── .claude/
+│   └── agents/             # Agent definitions
+│       └── pipeline-coordinator.md
+├── output/                 # Pipeline outputs (gitignored)
+│   ├── intelligence.md     # Sub-Agent 1 output
+│   ├── product_analysis.md # Sub-Agent 2 output
+│   ├── customer_analysis.md # Sub-Agent 3 output
+│   ├── market_analysis.md  # Sub-Agent 4 output
+│   └── exec_brief.md       # Sub-Agent 5 output
+├── presentations/          # Exec presentations and briefs
 ├── prospects/              # Sales pipeline and prospect tracking
 │   └── [company-name].md   # One file per prospect
 ├── customers/              # Active customer profiles
@@ -94,6 +104,8 @@ This repository uses a **5-agent pipeline** for strategic and operational tasks.
 - Market developments summarized
 - Competitor moves documented
 
+**Pipeline output:** Write to `output/intelligence.md`
+
 **Operating Principles:**
 - **Capture context**: Who requested it? Why? What problem does it solve?
 - **No filtering yet**: Gather everything, let analysts prioritize
@@ -121,6 +133,7 @@ This repository uses a **5-agent pipeline** for strategic and operational tasks.
 - **Build for the market, not one customer**: Unless they're paying for it
 
 **File Ownership:** `roadmap/`, `features/approved/`
+**Pipeline output:** Write to `output/product_analysis.md`
 
 ---
 
@@ -143,6 +156,7 @@ This repository uses a **5-agent pipeline** for strategic and operational tasks.
 - **Close the loop**: Track what we promised and delivered
 
 **File Ownership:** `features/requests/`, `support/`
+**Pipeline output:** Write to `output/customer_analysis.md`
 
 ---
 
@@ -165,6 +179,7 @@ This repository uses a **5-agent pipeline** for strategic and operational tasks.
 - **Benchmark honestly**: Where are we ahead? Behind?
 
 **File Ownership:** `market/`
+**Pipeline output:** Write to `output/market_analysis.md`
 
 ---
 
@@ -187,27 +202,60 @@ This repository uses a **5-agent pipeline** for strategic and operational tasks.
 - **Time-bound**: What needs decision now vs later?
 
 **File Ownership:** `strategy/`
+**Pipeline output:** Write to `output/exec_brief.md` (and optionally `output/presentation.html`)
 
 ---
 
 ## Invoking the Agent Pipeline
 
-**For strategic planning:**
+### Full Pipeline (Recommended for Major Decisions)
+
+Run all 5 agents with file-based handoffs:
+
 ```bash
-claude "Using the 5-agent architecture in CLAUDE.md, analyze our Q2 feature requests and recommend roadmap priorities."
+claude "Run the full strategic pipeline for: [TOPIC]. Write outputs to /output/"
 ```
 
-**For market analysis:**
+**Examples:**
+```bash
+# Quarterly planning
+claude "Run the full strategic pipeline for Q2 planning. Analyze feature requests, market trends, and customer feedback. Write outputs to /output/"
+
+# Decision brief
+claude "Run the full strategic pipeline to decide: Should we add Outlook integration? Write outputs to /output/"
+
+# Competitive response
+claude "Run the full strategic pipeline to analyze n2uitive's latest release and recommend response. Write outputs to /output/"
+```
+
+**Pipeline outputs:**
+```
+output/
+├── intelligence.md      # Sub-Agent 1: Gathered inputs
+├── product_analysis.md  # Sub-Agent 2: Roadmap & prioritization
+├── customer_analysis.md # Sub-Agent 3: Customer voice & pain points
+├── market_analysis.md   # Sub-Agent 4: Competitive & trends
+├── exec_brief.md        # Sub-Agent 5: Synthesized recommendations
+└── presentation.html    # Optional: Exec-ready presentation
+```
+
+**Important:** Phase 2 agents run in parallel with `run_in_background: false` to ensure completion before synthesis.
+
+### Single-Agent Invocations
+
+For focused tasks, invoke individual agents:
+
+**Market analysis:**
 ```bash
 claude "As the Market Analyst agent, research recent developments in [insurance claims AI / competitor name] and document in market/trends/"
 ```
 
-**For customer synthesis:**
+**Customer synthesis:**
 ```bash
 claude "As the Customer Success agent, synthesize the last 10 feature requests in features/requests/ and identify common themes."
 ```
 
-**For executive briefing:**
+**Executive briefing:**
 ```bash
 claude "As the Executive Synthesizer, create a decision brief for [topic] incorporating product, customer, and market perspectives."
 ```
