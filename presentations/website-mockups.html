@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClaimMentor Website Mockups</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #f0f0f0;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      min-height: 100vh;
+      padding: 40px 60px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .slide.active {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #003366;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #6B7280;
+    }
+
+    /* Website Mockup Container */
+    .browser {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .browser-bar {
+      background: #f1f1f1;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .browser-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .browser-dot.red { background: #ff5f57; }
+    .browser-dot.yellow { background: #febc2e; }
+    .browser-dot.green { background: #28c840; }
+
+    .browser-url {
+      background: #fff;
+      padding: 6px 12px;
+      border-radius: 4px;
+      margin-left: 12px;
+      font-size: 0.85rem;
+      color: #666;
+      flex: 1;
+      max-width: 400px;
+    }
+
+    .browser-content {
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    /* Website Styles */
+    .website {
+      font-family: 'Inter', sans-serif;
+      color: #100F0D;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #fff;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .logo .claim { color: #003366; }
+    .logo .mentor { color: #100F0D; }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #6B7280;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: #003366;
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: #003366;
+      border: 2px solid #003366;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 60px;
+      text-align: center;
+      background: linear-gradient(180deg, #fff 0%, #F5F5F5 100%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: #E8EDF5;
+      color: #003366;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: #100F0D;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .hero h1 .highlight {
+      color: #003366;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      color: #6B7280;
+      margin-bottom: 32px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    /* Problem Section */
+    .problems {
+      padding: 60px;
+      background: #fff;
+    }
+
+    .problems h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #100F0D;
+      margin-bottom: 40px;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .problem-card {
+      background: #F9FAFB;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .problem-card .icon {
+      width: 48px;
+      height: 48px;
+      background: #003366;
+      border-radius: 10px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.5rem;
+    }
+
+    .problem-card h3 {
+      font-size: 1.1rem;
+      color: #100F0D;
+      margin-bottom: 12px;
+    }
+
+    .problem-card p {
+      font-size: 0.95rem;
+      color: #6B7280;
+      line-height: 1.5;
+    }
+
+    /* How It Works */
+    .how-it-works {
+      padding: 60px;
+      background: #F5F5F5;
+    }
+
+    .how-it-works h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #100F0D;
+      margin-bottom: 40px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .step {
+      text-align: center;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      background: #003366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin: 0 auto 16px;
+    }
+
+    .step h3 {
+      font-size: 1.2rem;
+      color: #100F0D;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      font-size: 0.95rem;
+      color: #6B7280;
+    }
+
+    /* Use Cases */
+    .use-cases {
+      padding: 60px;
+      background: #fff;
+    }
+
+    .use-cases h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #100F0D;
+      margin-bottom: 12px;
+    }
+
+    .use-cases .subtitle {
+      text-align: center;
+      color: #6B7280;
+      margin-bottom: 40px;
+    }
+
+    .use-case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .use-case-card {
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 30px;
+    }
+
+    .use-case-card h3 {
+      color: #003366;
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #003366;
+    }
+
+    .use-case-card ul {
+      list-style: none;
+    }
+
+    .use-case-card li {
+      padding: 8px 0;
+      color: #6B7280;
+      font-size: 0.95rem;
+    }
+
+    .use-case-card li:before {
+      content: "✓";
+      color: #22C55E;
+      margin-right: 10px;
+      font-weight: 700;
+    }
+
+    /* Pricing */
+    .pricing {
+      padding: 60px;
+      background: #003366;
+      color: #fff;
+      text-align: center;
+    }
+
+    .pricing h2 {
+      color: #fff;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .pricing .subtitle {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 30px;
+    }
+
+    .price-box {
+      background: #fff;
+      color: #100F0D;
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .price {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #003366;
+    }
+
+    .price span {
+      font-size: 1rem;
+      color: #6B7280;
+      font-weight: 400;
+    }
+
+    .price-features {
+      text-align: left;
+      margin: 24px 0;
+    }
+
+    .price-features li {
+      padding: 8px 0;
+      color: #6B7280;
+      list-style: none;
+    }
+
+    .price-features li:before {
+      content: "✓";
+      color: #22C55E;
+      margin-right: 10px;
+      font-weight: 700;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 40px 60px;
+      background: #100F0D;
+      color: #9CA3AF;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer .logo .claim { color: #003366; }
+    .footer .logo .mentor { color: #fff; }
+
+    /* Navigation */
+    .pres-nav {
+      position: fixed;
+      bottom: 30px;
+      right: 40px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .pres-nav button {
+      background: #003366;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+
+    .pres-nav button:hover {
+      background: #002244;
+    }
+
+    .slide-counter {
+      color: #666;
+      font-size: 1rem;
+    }
+
+    .section-label {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #C9A227;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .slide-title {
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Slide 1: Title -->
+  <div class="slide active" id="slide-1">
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+      <h1 style="font-size: 3.5rem; color: #fff; margin-bottom: 20px;">ClaimMentor Website Mockups</h1>
+      <p style="font-size: 1.5rem; color: #6B7280; margin-bottom: 40px;">Proposed design based on positioning recommendations</p>
+      <p style="color: #003366; font-weight: 600;">Press arrow keys or click Next to navigate</p>
+    </div>
+  </div>
+
+  <!-- Slide 2: Hero Section -->
+  <div class="slide" id="slide-2">
+    <h2>Hero Section</h2>
+    <div class="browser">
+      <div class="browser-bar">
+        <div class="browser-dot red"></div>
+        <div class="browser-dot yellow"></div>
+        <div class="browser-dot green"></div>
+        <div class="browser-url">claimmentor.com</div>
+      </div>
+      <div class="browser-content">
+        <div class="website">
+          <div class="nav">
+            <div class="logo"><span class="claim">Claim</span><span class="mentor">Mentor</span></div>
+            <div class="nav-links">
+              <a href="#">How It Works</a>
+              <a href="#">Use Cases</a>
+              <a href="#">Pricing</a>
+              <a class="btn btn-primary">Book a Demo</a>
+            </div>
+          </div>
+          <div class="hero">
+            <div class="hero-badge">Built for Insurance Adjusters</div>
+            <h1><span class="highlight">Video</span> Recorded Statements<br>for Insurance</h1>
+            <p>See who you're paying. Catch fraud. Defend litigation.</p>
+            <div class="hero-cta">
+              <a class="btn btn-primary">Book a Demo</a>
+              <a class="btn btn-secondary">Watch Video</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3: Problem Section -->
+  <div class="slide" id="slide-3">
+    <h2>Problem / Solution Section</h2>
+    <div class="browser">
+      <div class="browser-bar">
+        <div class="browser-dot red"></div>
+        <div class="browser-dot yellow"></div>
+        <div class="browser-dot green"></div>
+        <div class="browser-url">claimmentor.com</div>
+      </div>
+      <div class="browser-content">
+        <div class="website">
+          <div class="problems">
+            <h2>Sound Familiar?</h2>
+            <div class="problem-grid">
+              <div class="problem-card">
+                <div class="icon">?</div>
+                <h3>Can't ID Your Claimants?</h3>
+                <p>Video gives SIU a face for surveillance. No more wondering who you're paying.</p>
+              </div>
+              <div class="problem-card">
+                <div class="icon">!</div>
+                <h3>Stories Change Over Time?</h3>
+                <p>Searchable transcripts let you "roll back the tape" when claims morph.</p>
+              </div>
+              <div class="problem-card">
+                <div class="icon">$</div>
+                <h3>Litigated Claims Costing You?</h3>
+                <p>Facts on record from day one. Stronger defense, better outcomes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 4: How It Works -->
+  <div class="slide" id="slide-4">
+    <h2>How It Works</h2>
+    <div class="browser">
+      <div class="browser-bar">
+        <div class="browser-dot red"></div>
+        <div class="browser-dot yellow"></div>
+        <div class="browser-dot green"></div>
+        <div class="browser-url">claimmentor.com</div>
+      </div>
+      <div class="browser-content">
+        <div class="website">
+          <div class="how-it-works">
+            <h2>Simple. Secure. Seamless.</h2>
+            <div class="steps">
+              <div class="step">
+                <div class="step-number">1</div>
+                <h3>Schedule</h3>
+                <p>Self-service booking via email or text. No more 3-day phone tag.</p>
+              </div>
+              <div class="step">
+                <div class="step-number">2</div>
+                <h3>Record</h3>
+                <p>Video + audio + real-time transcript. Works on any phone or computer.</p>
+              </div>
+              <div class="step">
+                <div class="step-number">3</div>
+                <h3>Review</h3>
+                <p>AI summary + full searchable transcript. Share with SIU or legal instantly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 5: Use Cases -->
+  <div class="slide" id="slide-5">
+    <h2>Use Cases by Line</h2>
+    <div class="browser">
+      <div class="browser-bar">
+        <div class="browser-dot red"></div>
+        <div class="browser-dot yellow"></div>
+        <div class="browser-dot green"></div>
+        <div class="browser-url">claimmentor.com</div>
+      </div>
+      <div class="browser-content">
+        <div class="website">
+          <div class="use-cases">
+            <h2>Built for Insurance Adjusters</h2>
+            <p class="subtitle">Video statements across all P&C lines</p>
+            <div class="use-case-grid">
+              <div class="use-case-card">
+                <h3>Workers Comp</h3>
+                <ul>
+                  <li>Catch morphing injuries</li>
+                  <li>PTD fraud detection</li>
+                  <li>Visual ID for SIU</li>
+                  <li>Employer/scene evidence</li>
+                </ul>
+              </div>
+              <div class="use-case-card">
+                <h3>Auto</h3>
+                <ul>
+                  <li>Injury verification</li>
+                  <li>Liability dispute support</li>
+                  <li>Accident scene context</li>
+                  <li>Witness credibility</li>
+                </ul>
+              </div>
+              <div class="use-case-card">
+                <h3>Property & GL</h3>
+                <ul>
+                  <li>Damage documentation</li>
+                  <li>Policyholder verification</li>
+                  <li>Witness statements</li>
+                  <li>Subrogation support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 6: Pricing -->
+  <div class="slide" id="slide-6">
+    <h2>Pricing Section</h2>
+    <div class="browser">
+      <div class="browser-bar">
+        <div class="browser-dot red"></div>
+        <div class="browser-dot yellow"></div>
+        <div class="browser-dot green"></div>
+        <div class="browser-url">claimmentor.com</div>
+      </div>
+      <div class="browser-content">
+        <div class="website">
+          <div class="pricing">
+            <h2>Transparent Pricing</h2>
+            <p class="subtitle">Built by insurance technology veterans</p>
+            <div class="price-box">
+              <div class="price">$100<span>/month per adjuster</span></div>
+              <ul class="price-features">
+                <li>Unlimited recordings</li>
+                <li>Transcription included</li>
+                <li>AI summaries included</li>
+                <li>Video storage included</li>
+                <li>Spanish language support</li>
+              </ul>
+              <a class="btn btn-primary" style="width: 100%; text-align: center;">Book a Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 7: Full Page -->
+  <div class="slide" id="slide-7">
+    <h2>Full Homepage</h2>
+    <div class="browser" style="max-height: calc(100vh - 120px);">
+      <div class="browser-bar">
+        <div class="browser-dot red"></div>
+        <div class="browser-dot yellow"></div>
+        <div class="browser-dot green"></div>
+        <div class="browser-url">claimmentor.com</div>
+      </div>
+      <div class="browser-content" style="overflow-y: auto;">
+        <div class="website">
+          <div class="nav">
+            <div class="logo"><span class="claim">Claim</span><span class="mentor">Mentor</span></div>
+            <div class="nav-links">
+              <a href="#">How It Works</a>
+              <a href="#">Use Cases</a>
+              <a href="#">Pricing</a>
+              <a class="btn btn-primary">Book a Demo</a>
+            </div>
+          </div>
+          <div class="hero" style="padding: 50px 60px;">
+            <div class="hero-badge">Built for Insurance Adjusters</div>
+            <h1 style="font-size: 2.5rem;"><span class="highlight">Video</span> Recorded Statements for Insurance</h1>
+            <p style="font-size: 1.1rem;">See who you're paying. Catch fraud. Defend litigation.</p>
+            <div class="hero-cta">
+              <a class="btn btn-primary">Book a Demo</a>
+              <a class="btn btn-secondary">Watch Video</a>
+            </div>
+          </div>
+          <div class="problems" style="padding: 40px 60px;">
+            <h2 style="font-size: 1.5rem;">Sound Familiar?</h2>
+            <div class="problem-grid">
+              <div class="problem-card" style="padding: 20px;">
+                <h3 style="font-size: 1rem;">Can't ID Your Claimants?</h3>
+                <p style="font-size: 0.85rem;">Video gives SIU a face for surveillance.</p>
+              </div>
+              <div class="problem-card" style="padding: 20px;">
+                <h3 style="font-size: 1rem;">Stories Change Over Time?</h3>
+                <p style="font-size: 0.85rem;">Searchable transcripts to "roll back the tape".</p>
+              </div>
+              <div class="problem-card" style="padding: 20px;">
+                <h3 style="font-size: 1rem;">Litigated Claims?</h3>
+                <p style="font-size: 0.85rem;">Facts on record for stronger defense.</p>
+              </div>
+            </div>
+          </div>
+          <div class="footer">
+            <div class="logo"><span class="claim">Claim</span><span class="mentor">Mentor</span></div>
+            <div style="font-size: 0.85rem;">Built by insurance technology veterans</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="pres-nav">
+    <span class="slide-counter"><span id="current">1</span> / <span id="total">7</span></span>
+    <button onclick="prevSlide()">Prev</button>
+    <button onclick="nextSlide()">Next</button>
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 7;
+
+    document.getElementById('total').textContent = totalSlides;
+
+    function showSlide(n) {
+      document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+      document.getElementById(`slide-${n}`).classList.add('active');
+      document.getElementById('current').textContent = n;
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      }
+    });
+  </script>
+
+</body>
+</html>

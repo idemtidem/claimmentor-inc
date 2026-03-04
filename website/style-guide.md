@@ -27,15 +27,15 @@
 
 ## Logo
 
-### Primary Logo (Teal + Black)
+### Primary Logo (Palmetto Blue + Black)
+- **"Claim"** — SC Palmetto Blue `#003366`
+- **"Mentor"** — Black `#000000`
+- Primary brand logo, use on white/light backgrounds
+
+### Alternate Logo (Teal + Black)
 - **"Claim"** — Teal `#16464F`
 - **"Mentor"** — Near Black `#100F0D`
-- Use on white/light backgrounds
-
-### Alternate Logo (Navy + Black)
-- **"Claim"** — Navy Blue `#003366`
-- **"Mentor"** — Black `#000000`
-- Use when teal doesn't work with context
+- Secondary option for variety
 
 ### Monochrome Logo
 - All black `#100F0D` or all white `#FFFFFF`
@@ -63,9 +63,9 @@ claimmentor logos/
 
 | Color | Hex | RGB | Use |
 |-------|-----|-----|-----|
-| **Teal** | `#16464F` | rgb(22, 70, 79) | Primary brand color, "Claim" in logo, CTAs, UI accents |
+| **Teal** | `#16464F` | rgb(22, 70, 79) | Secondary accent, alternate UI elements |
 | **Near Black** | `#100F0D` | rgb(16, 15, 13) | Body text, "Mentor" in logo, headlines |
-| **Navy** | `#003366` | rgb(0, 51, 102) | Alternate brand color, large headlines |
+| **Palmetto Blue** | `#003366` | rgb(0, 51, 102) | Primary brand color, "Claim" in logo, CTAs, headlines |
 
 ### Secondary Colors
 
@@ -93,17 +93,17 @@ claimmentor logos/
 │  HEADER / HERO                                              │
 │  Background: White or Light Gray                            │
 │  Text: Near Black (#100F0D)                                 │
-│  Accent: Teal (#16464F)                                     │
+│  Accent: Palmetto Blue (#003366)                            │
 ├─────────────────────────────────────────────────────────────┤
 │  CTA BUTTONS                                                │
-│  Primary: Teal (#16464F) bg, White text                     │
-│  Secondary: White bg, Teal border, Teal text                │
+│  Primary: Palmetto Blue (#003366) bg, White text            │
+│  Secondary: White bg, Palmetto Blue border & text           │
 │  Hover: Darken 10%                                          │
 ├─────────────────────────────────────────────────────────────┤
 │  FOOTER                                                     │
 │  Background: Near Black (#100F0D)                           │
 │  Text: White / Light Gray                                   │
-│  Links: Teal (#16464F) or lighter tint                      │
+│  Links: Palmetto Blue (#003366) or lighter tint             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -175,7 +175,7 @@ font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe 
 
 /* Accent Text (for highlighting "Claim" in headlines) */
 .accent-text {
-  color: #16464F;
+  color: #003366;
 }
 ```
 
@@ -205,7 +205,7 @@ Based on 4px base unit:
 **Primary Button**
 ```css
 .btn-primary {
-  background: #16464F;
+  background: #003366;
   color: #FFFFFF;
   padding: 12px 24px;
   border-radius: 6px;
@@ -217,7 +217,7 @@ Based on 4px base unit:
 }
 
 .btn-primary:hover {
-  background: #0F3238; /* Darken 15% */
+  background: #002244; /* Darken 15% */
 }
 ```
 
@@ -225,18 +225,18 @@ Based on 4px base unit:
 ```css
 .btn-secondary {
   background: #FFFFFF;
-  color: #16464F;
+  color: #003366;
   padding: 12px 24px;
   border-radius: 6px;
   font-weight: 600;
   font-size: 16px;
-  border: 2px solid #16464F;
+  border: 2px solid #003366;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .btn-secondary:hover {
-  background: #16464F;
+  background: #003366;
   color: #FFFFFF;
 }
 ```
@@ -272,8 +272,8 @@ Based on 4px base unit:
 
 .input:focus {
   outline: none;
-  border-color: #16464F;
-  box-shadow: 0 0 0 3px rgba(22, 70, 79, 0.1);
+  border-color: #003366;
+  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
 }
 ```
 
@@ -290,7 +290,7 @@ Based on 4px base unit:
 ### Icons
 - **Style:** Line icons, 1.5-2px stroke
 - **Size:** 24px default, 16px small, 32px large
-- **Color:** Inherit from text or use Teal for emphasis
+- **Color:** Inherit from text or use Palmetto Blue for emphasis
 
 ### Illustrations (if used)
 - Simple, geometric style
@@ -332,10 +332,10 @@ Based on 4px base unit:
 ```css
 :root {
   /* Colors */
+  --color-palmetto: #003366;
+  --color-palmetto-dark: #002244;
+  --color-palmetto-light: #004488;
   --color-teal: #16464F;
-  --color-teal-dark: #0F3238;
-  --color-teal-light: #1E5A66;
-  --color-navy: #003366;
   --color-black: #100F0D;
   --color-white: #FFFFFF;
   --color-gray-50: #F9FAFB;
@@ -395,12 +395,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        palmetto: {
+          DEFAULT: '#003366',
+          dark: '#002244',
+          light: '#004488',
+        },
         teal: {
           DEFAULT: '#16464F',
           dark: '#0F3238',
-          light: '#1E5A66',
         },
-        navy: '#003366',
         brand: {
           black: '#100F0D',
         },
@@ -418,9 +421,9 @@ module.exports = {
 ## Quick Reference
 
 ### Primary Brand Colors
-| | Teal | Black |
+| | Palmetto Blue | Black |
 |---|------|-------|
-| **Hex** | `#16464F` | `#100F0D` |
+| **Hex** | `#003366` | `#100F0D` |
 | **Use** | CTAs, accents, "Claim" | Body text, "Mentor" |
 
 ### Font
