@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClaimMentor Website: Before & After</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: #0a0a0a;
+      color: #f0f0f0;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      min-height: 100vh;
+      padding: 60px 80px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .slide.active {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #ffffff;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+      color: #f59e0b;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #d1d5db;
+    }
+
+    p {
+      font-size: 1.4rem;
+      line-height: 1.8;
+      color: #d1d5db;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 1.8rem;
+      color: #9ca3af;
+      margin-bottom: 60px;
+    }
+
+    .highlight {
+      color: #f59e0b;
+      font-weight: 600;
+    }
+
+    .red {
+      color: #ef4444;
+    }
+
+    .green {
+      color: #22c55e;
+    }
+
+    ul {
+      font-size: 1.4rem;
+      line-height: 2.2;
+      color: #d1d5db;
+      margin-left: 30px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      font-size: 1.2rem;
+    }
+
+    th, td {
+      padding: 20px 24px;
+      text-align: left;
+      border-bottom: 1px solid #333;
+    }
+
+    th {
+      background: #1a1a1a;
+      color: #f59e0b;
+      font-weight: 600;
+    }
+
+    td {
+      color: #d1d5db;
+    }
+
+    tr:hover {
+      background: #1a1a1a;
+    }
+
+    .wireframe {
+      background: #1a1a1a;
+      border: 2px solid #333;
+      border-radius: 12px;
+      padding: 40px;
+      margin: 30px 0;
+      font-family: 'Monaco', 'Consolas', monospace;
+    }
+
+    .wireframe-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .wireframe h4 {
+      font-size: 2rem;
+      color: #f59e0b;
+      margin-bottom: 15px;
+    }
+
+    .wireframe p {
+      font-size: 1.3rem;
+      color: #9ca3af;
+    }
+
+    .wireframe .cta {
+      display: inline-block;
+      background: #f59e0b;
+      color: #0a0a0a;
+      padding: 15px 40px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin: 30px 0;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin: 30px 0;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 30px;
+    }
+
+    .card h4 {
+      color: #f59e0b;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 1.1rem;
+      color: #9ca3af;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .before, .after {
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .before {
+      background: #1a0a0a;
+      border: 2px solid #ef4444;
+    }
+
+    .after {
+      background: #0a1a0a;
+      border: 2px solid #22c55e;
+    }
+
+    .nav {
+      position: fixed;
+      bottom: 30px;
+      right: 40px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .nav button {
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+
+    .nav button:hover {
+      background: #f59e0b;
+      color: #0a0a0a;
+    }
+
+    .slide-counter {
+      color: #666;
+      font-size: 1rem;
+    }
+
+    .quote {
+      font-style: italic;
+      font-size: 1.5rem;
+      color: #9ca3af;
+      border-left: 4px solid #f59e0b;
+      padding-left: 30px;
+      margin: 30px 0;
+    }
+
+    .big-number {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #f59e0b;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #f59e0b;
+      color: #0a0a0a;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-right: 10px;
+    }
+
+    .tag.red {
+      background: #ef4444;
+      color: #fff;
+    }
+
+    .tag.green {
+      background: #22c55e;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Slide 1: Title -->
+  <div class="slide active" id="slide-1">
+    <h1>ClaimMentor Website</h1>
+    <p class="subtitle">Before & After Positioning Recommendations</p>
+    <p style="margin-top: auto; color: #666;">Based on Farm Bureau demo feedback + competitive analysis</p>
+    <p style="color: #666;">March 2026</p>
+  </div>
+
+  <!-- Slide 2: The Problem -->
+  <div class="slide" id="slide-2">
+    <h2>The Problem</h2>
+    <p style="font-size: 2.5rem; margin-top: 60px;">Your website talks about <span class="highlight">features</span>.</p>
+    <p style="font-size: 2.5rem; margin-top: 30px;">Customers buy <span class="highlight">outcomes</span>.</p>
+  </div>
+
+  <!-- Slide 3: Current State -->
+  <div class="slide" id="slide-3">
+    <h2>Before: Current Messaging</h2>
+    <div class="wireframe">
+      <div class="wireframe-header">
+        <p style="color: #666; font-size: 1rem;">CLAIMMENTOR</p>
+        <h4 style="color: #9ca3af;">"Automates scheduling, recording, and summaries — helping adjusters work faster and deliver better claim outcomes."</h4>
+        <span class="cta" style="background: #666;">Get Started</span>
+      </div>
+    </div>
+    <h3 class="red" style="margin-top: 30px;">What's wrong:</h3>
+    <ul>
+      <li>Generic — could describe Zoom or Calendly</li>
+      <li>Feature-focused, not outcome-focused</li>
+      <li>No mention of <span class="highlight">VIDEO</span> (your differentiator)</li>
+      <li>No mention of Workers Comp, fraud, or litigation</li>
+    </ul>
+  </div>
+
+  <!-- Slide 4: Customer Gap -->
+  <div class="slide" id="slide-4">
+    <h2>The Gap: Website vs. Customer</h2>
+    <p>What Farm Bureau said they'd buy for:</p>
+    <table>
+      <tr>
+        <th>They Said...</th>
+        <th>Website Says...</th>
+      </tr>
+      <tr>
+        <td>"Catch morphing injuries"</td>
+        <td class="red">❌ Nothing</td>
+      </tr>
+      <tr>
+        <td>"Identify claimants for surveillance"</td>
+        <td class="red">❌ Nothing</td>
+      </tr>
+      <tr>
+        <td>"Support litigation defense"</td>
+        <td class="red">❌ Nothing</td>
+      </tr>
+      <tr>
+        <td>"See the injury scene on video"</td>
+        <td class="red">❌ Nothing</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Slide 5: Competitor -->
+  <div class="slide" id="slide-5">
+    <h2>Your Competitor: n2uitive</h2>
+    <div class="grid-2">
+      <div>
+        <p class="big-number">25M+</p>
+        <p>statements processed</p>
+        <p style="margin-top: 30px;"><span class="highlight">4 of Top 10</span> P&C insurers</p>
+        <p><span class="highlight">10,000+</span> adjusters daily</p>
+      </div>
+      <div>
+        <h3>But they have a gap:</h3>
+        <table>
+          <tr>
+            <th>n2uitive</th>
+            <th>ClaimMentor</th>
+          </tr>
+          <tr>
+            <td>Audio only</td>
+            <td class="green">VIDEO</td>
+          </tr>
+          <tr>
+            <td>Hidden pricing</td>
+            <td class="green">$100/mo</td>
+          </tr>
+          <tr>
+            <td>General P&C</td>
+            <td class="green">Workers Comp</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 6: The Insight -->
+  <div class="slide" id="slide-6">
+    <h2>The Insight</h2>
+    <p class="quote">"Surveillance doesn't have value if you cannot identify the worker."</p>
+    <p style="color: #666; margin-bottom: 60px;">— Steve Love, Farm Bureau WC Claims Manager</p>
+    <p style="font-size: 2rem;"><span class="highlight">VIDEO</span> enables fraud detection.</p>
+    <p style="font-size: 2rem; margin-top: 20px;">n2uitive can't solve this. <span class="green">You can.</span></p>
+  </div>
+
+  <!-- Slide 7: After - Hero -->
+  <div class="slide" id="slide-7">
+    <h2>After: Proposed Hero</h2>
+    <div class="wireframe">
+      <div class="wireframe-header">
+        <p style="color: #666; font-size: 1rem;">CLAIMMENTOR</p>
+        <h4>VIDEO RECORDED STATEMENTS FOR INSURANCE</h4>
+        <p style="font-size: 1.5rem; color: #d1d5db;">See who you're paying. Catch fraud. Defend litigation.</p>
+        <span class="cta">Book a Demo</span>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-top: 30px;">
+      <div><span class="tag green">VIDEO</span> Front and center</div>
+      <div><span class="tag green">OUTCOMES</span> Not features</div>
+      <div><span class="tag green">SPECIFIC</span> Fraud, litigation</div>
+    </div>
+  </div>
+
+  <!-- Slide 8: After - Problems -->
+  <div class="slide" id="slide-8">
+    <h2>After: Problem/Solution Section</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h4>Can't ID Your Claimants?</h4>
+        <p>Video = visual ID for SIU surveillance</p>
+      </div>
+      <div class="card">
+        <h4>Stories Change Over Time?</h4>
+        <p>Searchable transcripts to "roll back the tape"</p>
+      </div>
+      <div class="card">
+        <h4>Litigated Claims?</h4>
+        <p>Facts on record for stronger defense</p>
+      </div>
+    </div>
+    <p style="margin-top: 40px; color: #9ca3af;">These are the exact problems Farm Bureau described.</p>
+  </div>
+
+  <!-- Slide 9: After - Workers Comp -->
+  <div class="slide" id="slide-9">
+    <h2>After: Workers Comp Focus</h2>
+    <div class="wireframe">
+      <h4 style="text-align: center;">PURPOSE-BUILT FOR WORKERS COMP</h4>
+      <div class="grid-2" style="margin-top: 30px;">
+        <div>
+          <p>✓ Morphing injury protection</p>
+          <p>✓ PTD fraud detection</p>
+        </div>
+        <div>
+          <p>✓ Spanish transcription</p>
+          <p>✓ Employer/scene evidence</p>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top: 30px;">Farm Bureau is WC. <span class="highlight">This is your ICP.</span></p>
+  </div>
+
+  <!-- Slide 10: After - Pricing -->
+  <div class="slide" id="slide-10">
+    <h2>After: Transparent Pricing</h2>
+    <div class="wireframe" style="text-align: center;">
+      <p style="color: #666;">Built by insurance technology veterans</p>
+      <p class="big-number" style="margin: 30px 0;">$100<span style="font-size: 1.5rem; color: #9ca3af;">/month per adjuster</span></p>
+      <div style="text-align: left; max-width: 400px; margin: 0 auto;">
+        <p>✓ Unlimited recordings</p>
+        <p>✓ Transcription included</p>
+        <p>✓ AI summaries included</p>
+        <p>✓ Video storage included</p>
+      </div>
+      <span class="cta" style="margin-top: 30px;">Book a Demo</span>
+    </div>
+    <p style="margin-top: 30px;">n2uitive hides their pricing. <span class="green">You don't have to.</span></p>
+  </div>
+
+  <!-- Slide 11: Side by Side -->
+  <div class="slide" id="slide-11">
+    <h2>Before vs After</h2>
+    <table>
+      <tr>
+        <th>Element</th>
+        <th class="red">Before</th>
+        <th class="green">After</th>
+      </tr>
+      <tr>
+        <td>Headline</td>
+        <td>"Automates scheduling..."</td>
+        <td>"Video Recorded Statements"</td>
+      </tr>
+      <tr>
+        <td>Subhead</td>
+        <td>"Work faster"</td>
+        <td>"Catch fraud. Defend litigation."</td>
+      </tr>
+      <tr>
+        <td>Differentiator</td>
+        <td>None</td>
+        <td>VIDEO</td>
+      </tr>
+      <tr>
+        <td>Target</td>
+        <td>Generic</td>
+        <td>Workers Comp</td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td>Not shown</td>
+        <td>$100/mo</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Slide 12: Quick Wins -->
+  <div class="slide" id="slide-12">
+    <h2>Quick Wins (30 Minutes)</h2>
+    <table>
+      <tr>
+        <th>Change</th>
+        <th>Time</th>
+        <th>Impact</th>
+      </tr>
+      <tr>
+        <td>Change headline to outcome-focused</td>
+        <td>5 min</td>
+        <td><span class="tag green">HIGH</span></td>
+      </tr>
+      <tr>
+        <td>Add "Video" explicitly</td>
+        <td>5 min</td>
+        <td><span class="tag green">HIGH</span></td>
+      </tr>
+      <tr>
+        <td>Add pricing ($100/mo)</td>
+        <td>10 min</td>
+        <td><span class="tag green">HIGH</span></td>
+      </tr>
+      <tr>
+        <td>Add "Workers Comp" somewhere</td>
+        <td>5 min</td>
+        <td><span class="tag">MEDIUM</span></td>
+      </tr>
+      <tr>
+        <td>Add "Built by insurance veterans"</td>
+        <td>5 min</td>
+        <td><span class="tag">MEDIUM</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Slide 13: Headline Options -->
+  <div class="slide" id="slide-13">
+    <h2>Headline Options</h2>
+    <p style="margin-bottom: 40px;">Pick one:</p>
+    <div class="card" style="margin-bottom: 20px;">
+      <h4>Option A</h4>
+      <p style="font-size: 1.8rem; color: #fff;">Video Recorded Statements for Insurance</p>
+    </div>
+    <div class="card" style="margin-bottom: 20px;">
+      <h4>Option B</h4>
+      <p style="font-size: 1.8rem; color: #fff;">See Who You're Paying</p>
+    </div>
+    <div class="card" style="margin-bottom: 20px;">
+      <h4>Option C</h4>
+      <p style="font-size: 1.8rem; color: #fff;">Recorded Statements That Catch Fraud</p>
+    </div>
+    <div class="card">
+      <h4>Option D</h4>
+      <p style="font-size: 1.8rem; color: #fff;">Put a Face to Every Claim</p>
+    </div>
+  </div>
+
+  <!-- Slide 14: Next Steps -->
+  <div class="slide" id="slide-14">
+    <h2>Next Steps</h2>
+    <ul style="font-size: 1.6rem; line-height: 2.5;">
+      <li>Pick a headline from the options</li>
+      <li>Update hero section <span style="color: #666;">(30 min)</span></li>
+      <li>Add Workers Comp content <span style="color: #666;">(1 hour)</span></li>
+      <li>Get a testimonial quote <span style="color: #666;">(from DJ or early user)</span></li>
+      <li>Review after Farm Bureau follow-up</li>
+    </ul>
+    <p style="margin-top: 60px; font-size: 1.5rem;">Questions?</p>
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav">
+    <span class="slide-counter"><span id="current">1</span> / <span id="total">14</span></span>
+    <button onclick="prevSlide()">← Prev</button>
+    <button onclick="nextSlide()">Next →</button>
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 14;
+
+    document.getElementById('total').textContent = totalSlides;
+
+    function showSlide(n) {
+      document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+      document.getElementById(`slide-${n}`).classList.add('active');
+      document.getElementById('current').textContent = n;
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      }
+    });
+  </script>
+
+</body>
+</html>
